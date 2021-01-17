@@ -26,7 +26,6 @@ MongoClient.connect(uri, function(err, client) {
   })
 
   app.get('/registeredUser',(req, res)=>{
-    console.log(verifyEmail);
     userCollection.find({email: req.query.email})
     .toArray((err, document)=>{
       res.send(document)
